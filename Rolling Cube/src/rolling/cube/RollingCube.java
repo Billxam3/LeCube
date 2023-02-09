@@ -76,7 +76,8 @@ public class RollingCube extends Application {
         else if (keyCode == KeyCode.NUMPAD6) {camera.setTranslateX(camera.getTranslateX() + 10);} 
         else if (keyCode == KeyCode.NUMPAD2) {camera.setTranslateZ(camera.getTranslateZ() - 10);} 
         else if (keyCode == KeyCode.NUMPAD8) {camera.setTranslateZ(camera.getTranslateZ() + 10);}
-     });
+     }
+    );
     
 
   
@@ -85,20 +86,20 @@ public class RollingCube extends Application {
     mouseOldX = event.getSceneX();
     mouseOldY = event.getSceneY();
   }
-});
+ }
+);
 
 scene.setOnMouseDragged(event -> {
   if (event.isPrimaryButtonDown()) {
     mouseX = event.getSceneX();
     mouseY = event.getSceneY();
-
     cube.setTranslateX(cube.getTranslateX() + (mouseX - mouseOldX));
     cube.setRotate(cube.getRotate() + (mouseX - mouseOldX));
-
     mouseOldX = mouseX;
     mouseOldY = mouseY;
   }
-});
+ }
+);
 
 primaryStage.setScene(scene);
     primaryStage.show();
